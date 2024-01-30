@@ -20,54 +20,56 @@
 идентификатор структурного подразделения, внешний ключ, целое число).
 
  Решение 1
--- Таблица "Сотрудники"
-CREATE TABLE Сотрудники (
-    Идентификатор SERIAL PRIMARY KEY,
-    ФИО_сотрудника VARCHAR(50),
-    Оклад REAL,
-    Должность VARCHAR(50),
-    Тип_подразделения VARCHAR(50),
-    Дата_найма DATE,
-    Адрес_филиала VARCHAR(255),
-    Проект_назначения VARCHAR(50),
-    Идентификатор_структурного_подразделения INTEGER REFERENCES Структурные_подразделения(Идентификатор)
+
+-- Table "Employees"
+CREATE TABLE Employees (
+    Id SERIAL PRIMARY KEY,
+    Full_Name VARCHAR(50),
+    Salary REAL,
+    Position VARCHAR(50),
+    Department_Type VARCHAR(50),
+    Hire_Date DATE,
+    Branch_Address VARCHAR(255),
+    Assigned_Project VARCHAR(50),
+    Structural_Department_Id INTEGER REFERENCES Structural_Departments(Id)
 );
 
--- Таблица "Структурные подразделения"
-CREATE TABLE Структурные_подразделения (
-    Идентификатор SERIAL PRIMARY KEY,
-    Название_подразделения VARCHAR(50)
+-- Table "Structural Departments"
+CREATE TABLE Structural_Departments (
+    Id SERIAL PRIMARY KEY,
+    Department_Name VARCHAR(50)
 );
 
--- Таблица "Проекты"
-CREATE TABLE Проекты (
-    Идентификатор SERIAL PRIMARY KEY,
-    Название_проекта VARCHAR(50)
+-- Table "Projects"
+CREATE TABLE Projects (
+    Id SERIAL PRIMARY KEY,
+    Project_Name VARCHAR(50)
 );
 
--- Таблица "Типы подразделений"
-CREATE TABLE Типы_подразделений (
-    Идентификатор SERIAL PRIMARY KEY,
-    Тип_подразделения VARCHAR(50)
+-- Table "Department Types"
+CREATE TABLE Department_Types (
+    Id SERIAL PRIMARY KEY,
+    Department_Type VARCHAR(50)
 );
 
--- Таблица "Адреса филиалов"
-CREATE TABLE Адреса_филиалов (
-    Идентификатор SERIAL PRIMARY KEY,
-    Адрес VARCHAR(255)
+-- Table "Branch Addresses"
+CREATE TABLE Branch_Addresses (
+    Id SERIAL PRIMARY KEY,
+    Address VARCHAR(255)
 );
 
--- Таблица "Должности"
-CREATE TABLE Должности (
-    Идентификатор SERIAL PRIMARY KEY,
-    Название_должности VARCHAR(50)
+-- Table "Positions"
+CREATE TABLE Positions (
+    Id SERIAL PRIMARY KEY,
+    Position_Name VARCHAR(50)
 );
 
--- Таблица "Дата найма"
-CREATE TABLE Дата_найма (
-    Идентификатор SERIAL PRIMARY KEY,
-    Дата DATE
+-- Table "Hire Dates"
+CREATE TABLE Hire_Dates (
+    Id SERIAL PRIMARY KEY,
+    Hire_Date DATE
 );
+
 
 Задание 2*
 Перечислите, какие в вашей денормализованной таблице приведены зависимости, и какие правила взгляда на результаты необходимо применить для нормализации данных.
