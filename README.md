@@ -23,7 +23,7 @@
 
 1.Таблица "Сотрудники"
 
-CREATE TABLE Сотрудники (
+    CREATE TABLE Сотрудники (
 
     Идентификатор SERIAL PRIMARY KEY,
 
@@ -43,75 +43,75 @@ CREATE TABLE Сотрудники (
 
     Идентификатор_структурного_подразделения INTEGER REFERENCES Структурные_подразделения(Идентификатор)
 
-);
+    );
 
 2.Таблица "Структурные подразделения"
 
-CREATE TABLE Структурные_подразделения (
+    CREATE TABLE Структурные_подразделения (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Название_подразделения VARCHAR(50)
+    Название_подразделения VARCHAR(50)
 
-);
+    );
 
 3.Таблица "Проекты"
 
-CREATE TABLE Проекты (
+    CREATE TABLE Проекты (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Название_проекта VARCHAR(50)
+    Название_проекта VARCHAR(50)
 
-);
+    );
 
 4.Таблица "Типы подразделений"
 
-CREATE TABLE Типы_подразделений (
+    CREATE TABLE Типы_подразделений (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Тип_подразделения VARCHAR(50)
+    Тип_подразделения VARCHAR(50)
 
-);
+    );
 
 5.Таблица "Адреса филиалов"
 
-CREATE TABLE Адреса_филиалов (
+    CREATE TABLE Адреса_филиалов (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Адрес VARCHAR(255)
+    Адрес VARCHAR(255)
 
-);
+    );
 
 6.Таблица "Должности"
 
-CREATE TABLE Должности (
+    CREATE TABLE Должности (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Название_должности VARCHAR(50)
+    Название_должности VARCHAR(50)
 
-);
+    );
 
 7.Таблица "Дата найма"
 
-CREATE TABLE Дата_найма (
+    CREATE TABLE Дата_найма (
 
-Идентификатор SERIAL PRIMARY KEY,
+    Идентификатор SERIAL PRIMARY KEY,
 
-Дата DATE
+    Дата DATE
 
-);
+    );
 
 Типы данных в PostgreSQL могут быть примерно следующими:
 
-целое число - integer
+    целое число - integer
 
-вещественное число - real или numeric
+    вещественное число - real или numeric
 
-фамилия и название - varchar(50)
+    фамилия и название - varchar(50)
 
 Решение 2
 
