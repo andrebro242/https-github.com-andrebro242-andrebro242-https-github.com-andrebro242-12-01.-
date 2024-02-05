@@ -28,7 +28,7 @@
     Фамилия VARCHAR(50),
     Имя VARCHAR(50),
     Отчество VARCHAR(50),
-    Оклад INTEGER REFERENCES Оклады(Идентификатор),
+    Оклад NUMERIC,
     Должность INTEGER REFERENCES Должности(Идентификатор),
     Дата_найма DATE,
     Проект_назначения INTEGER REFERENCES Проекты(Идентификатор),
@@ -77,8 +77,8 @@
 
     CREATE TABLE Оклады (
     Идентификатор SERIAL PRIMARY KEY,
-    Оклад INTEGER,
-    Идентификатор_сотрудника INTEGER REFERENCES Сотрудники(Идентификатор)
+    Оклад NUMERIC,
+    Идентификатор_сотрудника INTEGER
     );
 
 Типы данных в PostgreSQL могут быть примерно следующими:
